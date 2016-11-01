@@ -12,7 +12,7 @@ class bcolors:
 
 class _Network():
 	def __init__(self):
-		USER_AGENT = 'Ir Scraper 1.0'
+		USER_AGENT = 'Ir Scraper 1.1'
 		self.request = praw.Reddit(user_agent=USER_AGENT)
 
 	def to_dict(self):
@@ -102,7 +102,7 @@ def scrape_subreddit(title):
 def scrape():
 	with open('input.txt') as fp:
 		for line in fp:
-			scrape_subreddit(line)
+			scrape_subreddit(line.rstrip('\n'))
 
 
 
